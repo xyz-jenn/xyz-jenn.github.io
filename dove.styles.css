@@ -3,11 +3,14 @@ body {
     padding: 0;
     margin: 0;
     place-content: center;
+    background-color: #fb97cb;
+
 }
 
 html {
     font-family: font, monospace;
     letter-spacing: 2px;
+    /* word-spacing: 2px; */
     font-size: 1.1em;
 }
 
@@ -32,8 +35,9 @@ body {
 }
 
 main {
-    width: 100vw;
-    height: 100vh;
+    width: fit-content;
+    height: fit-content;
+    display: grid;
     /* word-break: break-all; */
     position: fixed;
     /* margin: auto; */
@@ -45,9 +49,7 @@ main {
 
 
 
-*,
-::before,
-::after {
+* {
     box-sizing: border-box;
 }
 
@@ -59,17 +61,25 @@ main {
     background-position: 100% 100%;
     background-attachment: local;
     background-size: 30%;
-    padding: 10px;
-    background-image: image-set(url("pom.avif") type("image/avif"), url("pom.webp") type("image/webp"), url("pom.gif") type("image/gif"));
+    border: 3px solid hsl(321, 93%, 70%);
+    border-radius: 10px;
+    corner-shape: scoop;
     scrollbar-width: thin;
     height: 100%;
     text-align: center;
-    --scrollbar-color: hsl(321, 93%, 79%);
-    --scrollbar-thumb-color: #3a3831;
     width: 100%;
+    contain-intrinsic-size: 100%;
+    content-visibility: auto;
     display: block;
-    overflow-y: scroll;
+    overflow-y: auto;
     overflow-x: hidden;
+    scroll-snap-stop: always;
+    scroll-snap-align: start;
+}
+
+.box:nth-of-type(1) {
+    background-image: image-set(url("pom.avif") type("image/avif"), url("pom.webp") type("image/webp"), url("pom.gif") type("image/gif"));
+
 }
 
 #content {
@@ -77,11 +87,17 @@ main {
     width: 90vw;
     margin: auto;
     overflow: visible;
+    scroll-snap-type: y mandatory;
     position: relative;
     border-radius: 5px;
+    overflow-y: scroll;
+    /* scrollbar-width: none; */
     max-width: 800px;
     border: 5px solid hsla(321, 90%, 79%, 0.95);
     background: #fa9bd9;
+    --scrollbar-color: hsl(321, 93%, 79%);
+    --scrollbar-thumb-color: #3a3831;
+    scrollbar-width: thin;
     background: linear-gradient(8deg, rgba(250, 155, 217, .89) 1%, rgba(235, 178, 215, .89) 99%);
 }
 
@@ -118,10 +134,46 @@ return Array.from({length:2}, (_, i) =>
 }*/
 #kuromi {
     left: -10px;
-    width: 40vw;
-    max-width: 300px;
+    width: 38vw;
+    max-width: 290px;
     bottom: -780px;
     /* filter: drop-shadow(calc(var(--c-STICKER_SHIFT) * -1) var(--c-STICKER_SHIFT) 1px var(--c-STICKER_COLOR)) */
+}
+
+@keyframes throb {
+    0% {
+        background-size: 100px
+    }
+
+    100% {
+        background-size: 85px
+    }
+}
+
+#hello::before,
+#hello::after {
+    background-image: image-set(url("kitty.avif") type("image/avif"));
+    width: 50px;
+    background-size: 100px;
+    background-position: center;
+    vertical-align: bottom;
+    height: 50px;
+    content: "";
+    display: inline-block;
+    margin-inline: -4px;
+    transform: rotate(25deg);
+    animation: throb 1s ease-in-out alternate infinite
+}
+@media screen and (width < 780px) {
+    p {
+        margin: 10px
+    }
+}
+#hello::after {
+    transform: rotateY(180deg) rotateZ(25deg);
+    animation-direction: alternate-reverse;
+    margin-inline: -6px;
+    content: "" / "hello kitty sticker";
 }
 
 #bow {
@@ -129,8 +181,10 @@ return Array.from({length:2}, (_, i) =>
     /* transform: rotate(10deg); */
     position: absolute;
     top: -40px;
-    right: -26px;
+    pointer-events: none;
+    right: -30px;
     width: 80px;
+    z-index: 2;
     animation-delay: 1s;
     animation: bow 1s ease-in-out infinite alternate
 }
@@ -160,8 +214,8 @@ return Array.from({length:2}, (_, i) =>
     animation-direction: alternate-reverse;
 }
 
-p {
-    font-size: 1.1rem;
+h1 {
+    font-size: 1.8em;
 }
 
 @keyframes jump {
@@ -191,9 +245,4 @@ p {
     100% {
         background-position-y: -760px
     }
-}
-
-body,
-html {
-    background-color: #fb97cb
 }
