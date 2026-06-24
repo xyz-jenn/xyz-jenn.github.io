@@ -37,7 +37,7 @@ body {
 main {
     width: fit-content;
     height: fit-content;
-    display: grid;
+    display: block;
     /* word-break: break-all; */
     position: fixed;
     /* margin: auto; */
@@ -78,8 +78,8 @@ main {
 }
 
 .box:nth-of-type(1) {
-    background-image: image-set(url("pom.avif") type("image/avif"), url("pom.webp") type("image/webp"), url("pom.gif") type("image/gif"));
-
+    background-image: url("pom.gif");
+    background-image: image-set(url("pom.webp") type("image/heif"), url("pom.avif") type("image/avif"), url("pom.webp") type("image/webp"), url("pom.gif") type("image/gif"));
 }
 
 #content {
@@ -142,17 +142,19 @@ return Array.from({length:2}, (_, i) =>
 
 @keyframes throb {
     0% {
-        background-size: 100px
+        scale: 1
     }
 
     100% {
-        background-size: 85px
+        scale: .85
     }
 }
 
 #hello::before,
 #hello::after {
-    background-image: image-set(url("kitty.avif") type("image/avif"));
+
+    background-image: url("kitty.gif");
+    background-image: image-set(url("kitty.webp") type("image/heif"), url("kitty.avif") type("image/avif"), url("kitty.webp") type("image/webp"), url("kitty.gif") type("image/gif"));
     width: 50px;
     background-size: 100px;
     background-position: center;
@@ -164,11 +166,13 @@ return Array.from({length:2}, (_, i) =>
     transform: rotate(25deg);
     animation: throb 1s ease-in-out alternate infinite
 }
+
 @media screen and (width < 780px) {
     p {
         margin: 10px
     }
 }
+
 #hello::after {
     transform: rotateY(180deg) rotateZ(25deg);
     animation-direction: alternate-reverse;
@@ -182,11 +186,11 @@ return Array.from({length:2}, (_, i) =>
     position: absolute;
     top: -40px;
     pointer-events: none;
-    right: -30px;
+    right: -40px;
     width: 80px;
     z-index: 2;
     animation-delay: 1s;
-    animation: bow 1s ease-in-out infinite alternate
+    animation: bow 2s ease-in-out infinite alternate
 }
 
 @keyframes bow {
@@ -230,7 +234,7 @@ h1 {
 
 #bg {
     background-image: url(bg.jpeg);
-    background-image: image-set(url("bg.avif") type("image/avif"), url("bg.webp") type("image/webp"), url("bg.jpeg") type("image/png"));
+    background-image: image-set(url("bg.avif") type("image/avif"), url("bg.webp") type("image/webp"), url("bg.jpeg") type("image/jpeg"));
     background-size: 760px 760px;
     background-color: #fb97cb;
     animation: bg 40s linear infinite;
