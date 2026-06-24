@@ -8,7 +8,7 @@ body {
 html {
     font-family: font, monospace;
     letter-spacing: 2px;
-    font-size: 1.2em;
+    font-size: 1.1em;
 }
 
 @font-face {
@@ -51,16 +51,14 @@ main {
     box-sizing: border-box;
 }
 
-p {
-    margin-inline: 20px;
-}
+
 
 .box {
     margin: auto;
     background-repeat: no-repeat;
-    background-position:100% 100%;
+    background-position: 100% 100%;
     background-attachment: local;
-    background-size: 200px;
+    background-size: 30%;
     padding: 10px;
     background-image: image-set(url("pom.avif") type("image/avif"), url("pom.webp") type("image/webp"), url("pom.gif") type("image/gif"));
     scrollbar-width: thin;
@@ -89,7 +87,7 @@ p {
 
 #line {
     display: flex;
-    place-content: space-around;
+    place-content: space-between;
     bottom: 10px;
     position: fixed;
     place-items: center;
@@ -104,26 +102,65 @@ p {
 .sticker {
     width: 20vw;
     max-width: 170px;
-    bottom: -800px;
+    bottom: -770px;
     position: relative;
-    --user-select: none
+    --user-select: none;
+    animation: hop 2s ease-in-out infinite alternate
 }
 
 .float:nth-of-type(1) {
     animation: jump 800ms ease-out forwards;
-    animation-delay: 400ms;
+    animation-delay: 400ms
 }.float:nth-of-type(2) {
     animation: jump 800ms ease-out forwards;
-    animation-delay: 800ms;
+    animation-delay: 800ms
 }
 #kuromi {
-    scale: 1.7;
-    left: -30%
-        /* filter: drop-shadow(calc(var(--c-STICKER_SHIFT) * -1) var(--c-STICKER_SHIFT) 1px var(--c-STICKER_COLOR)) */
+    left: -10px;
+    width: 40vw;
+    max-width: 300px;
+    bottom: -780px;
+    /* filter: drop-shadow(calc(var(--c-STICKER_SHIFT) * -1) var(--c-STICKER_SHIFT) 1px var(--c-STICKER_COLOR)) */
+}
+
+#bow {
+    --user-select: none;
+    /* transform: rotate(10deg); */
+    position: absolute;
+    top: -40px;
+    right: -26px;
+    width: 80px;
+    animation-delay: 1s;
+    animation: bow 1s ease-in-out infinite alternate
+}
+
+@keyframes bow {
+    0% {
+        transform: rotate(8deg)
+    }
+
+    100% {
+        transform: rotate(-8deg)
+    }
+}
+
+@keyframes hop {
+    0% {
+        transform: translate(0, -10px)
+    }
+
+    100% {
+        transform: translate(0, 10px)
+    }
 }
 
 #mel {
-    right: -30%;
+    right: 30px;
+    animation-direction: alternate-reverse;
+}
+
+p {
+    font-size: 1.1rem;
 }
 
 @keyframes jump {

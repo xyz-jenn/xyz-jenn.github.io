@@ -16,17 +16,17 @@
     <meta name="viewport"
         content="width=device-width, initial-scale=1, user-scalable=yes, viewport-fit=cover, interactive-widget=resizes-visual">
     <meta name="description" content="YOUR DESC HERE">
-    <meta property="og:image:width" content="IMAGE WIDTH HERE">
-    <meta property="og:image:height" content="IMAGE HEIGHT HERE">
-    <meta property="og:image:type" content="image/*">
+    <meta property="og:image:width" content="<!--${return width}-->">
+    <meta property="og:image:height" content="<!--${return height}-->">
+    <meta property="og:image:type" content="image/avif">
     <meta property="og:type" content="website">
-    <meta property="og:image" content="YOUR IMAGE HERE">
+    <meta property="og:image" content="<!--${return image}-->">
     <meta property="og:url" content="ABSOLUTE URL HERE">
     <meta property="og:description" content="YOUR DESC HERE">
-    <meta property="og:title" content="YOUR TITLE HERE">
-    <meta property="og:site_name" content="YOUR TITLE HERE">
-    <meta name="twitter:title" content="YOUR TITLE HERE">
-    <meta name="application-name" content="YOUR TITLE HERE">
+    <meta property="og:title" content="<!--${return title}-->">
+    <meta property="og:site_name" content="<!--${return title}-->">
+    <meta name="twitter:title" content="<!--${return title}-->">
+    <meta name="application-name" content="<!--${return title}-->">
     <meta name="application-url" content="ABSOLUTE URL HERE">
     <meta name="twitter:url" content="ABSOLUTE URL HERE">
     <meta name="web_author" content="addsoupbase">
@@ -36,11 +36,11 @@
     <meta name="twitter:site:id" content="1799269566834454528">
     <meta name="creator" content="addsoupbase">
     <meta name="designer" content="addsoupbase">
-    <meta name="twitter:image" content="YOUR IMAGE HERE">
-    <meta name="twitter:image:width" content="IMAGE WIDTH HERE">
-    <meta name="twitter:image:height" content="IMAGE HEIGHT HERE">
-    <meta name="msapplication-navbutton-color" content="YOUR COLOR HERE">
-    <meta name="msapplication-TileColor" content="YOUR COLOR HERE">
+    <meta name="twitter:image" content="<!--${return image}-->">
+    <meta name="twitter:image:width" content="<!--${return width}-->">
+    <meta name="twitter:image:height" content="<!--${return height}-->">
+    <meta name="msapplication-navbutton-color" content="<!--${return themeColor}-->">
+    <meta name="msapplication-TileColor" content="<!--${return themeColor}-->">
     <meta name="msapplication-square150x150logo" content="./apple-touch-icon-152x152.png">
     <meta name="msapplication-square310x310logo" content="./apple-touch-icon-180x180.png">
     <meta name="msapplication-square70x70logo" content="./apple-touch-icon-72x72.png">
@@ -48,21 +48,21 @@
     <meta name="msapplication-TileImage" content="./apple-touch-icon-180x180.png">
     <meta name="msapplication-starturl" content="ABSOLUTE URL HERE">
     <meta name="origin" content="ABSOLUTE URL HERE">
-    <meta name="msapplication-tooltip" content="YOUR TITLE HERE">
-    <meta name="prism:alternateTitle" content="YOUR TITLE HERE">
+    <meta name="msapplication-tooltip" content="<!--${return title}-->">
+    <meta name="prism:alternateTitle" content="<!--${return title}-->">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="thumbnail" content="YOUR IMAGE HERE">
+    <meta name="thumbnail" content="<!--${return image}-->">
     <meta property="profile:username" content="addsoupbase">
     <!--summary_large_image,summary,app,or player -->
     <link rel="icon" type="image/x-icon" href="favicon.ico">
-    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="shortcut icon" href="https://xyz-jenn.github.io/preview.avif">
     <meta name="robots" content="index">
-    <meta name="theme-color" content="YOUR COLOR HERE">
+    <meta name="theme-color" content="<!--${return themeColor}-->">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <meta name="author" content="addsoupbase">
     <link rel="canonical" href="ABSOLUTE URL HERE">
     <script
-        type="application/ld+json">{"@context":"https://schema.org","@type": "WebSite","name":"addsoupbase","url":"ABSOLUTE URL HERE","description":"YOUR DESC HERE","author":{"@type": "Person","name":"addsoupbase","sameAs":["https://twitter.com/addsoupbase"]},"mainEntityOfPage":{"@type":"WebPage","@id":"ABSOLUTE URL HERE"},"image":{"@type":"ImageObject","url":"YOUR IMAGE HERE","width":IMAGE WIDTH HERE,"height":IMAGE HEIGHT HERE}}</script>
+        type="application/ld+json">{"@context":"https://schema.org","@type": "WebSite","name":"addsoupbase","url":"ABSOLUTE URL HERE","description":"YOUR DESC HERE","author":{"@type": "Person","name":"addsoupbase","sameAs":["https://twitter.com/addsoupbase"]},"mainEntityOfPage":{"@type":"WebPage","@id":"ABSOLUTE URL HERE"},"image":{"@type":"ImageObject","url":"<!--${return image}-->","width":<!--${return width}-->,"height":<!--${return height}-->}}</script>
     <link rel="apple-touch-icon" sizes="57x57" href="./apple-touch-icon-57x57.png">
     <link rel="apple-touch-icon" sizes="60x60" href="./apple-touch-icon-60x60.png">
     <link rel="apple-touch-icon" sizes="72x72" href="./apple-touch-icon-72x72.png">
@@ -74,11 +74,15 @@
     <link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon-180x180.png">
     <meta name="mobile-web-app-capable" content="no">
     <meta name="apple-mobile-web-app-capable" content="no">
-    <meta name="apple-mobile-web-app-title" content="YOUR TITLE HERE">
+    <meta name="apple-mobile-web-app-title" content="<!--${return title}-->">
     <link rel="apple-touch-startup-image" href="favicon.ico">
-    <title>YOUR TITLE HERE</title>
+    <title><!--${return title}--></title>
     <link rel="preload" as="font" fetchpriority="high" href="font.woff2" type="font/woff2" crossorigin="anonymous">
     <link rel="inline stylesheet" href="styles.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./favicon-16x16.png">
+    <link rel="manifest" href="./site.webmanifest" fetchpriority="low">
 </head>
 
 <body>
@@ -107,13 +111,11 @@
             <picture>
                 <source srcset="bow.avif" type="image/avif">
                 <source srcset="bow.webp" type="image/webp">
-                <img src="bow.png" draggable="false" style="--user-select:none;transform:rotate(10deg);position: absolute;top:-45px;right:-50px;width:100px">
+                <img src="bow.png" id="bow" draggable="false">
             </picture>
             <section class="box">
                 <article>
-                    <h1>
-                        HEEYAAAA!! AM JENN JENN!
-                    </h1>
+                    <h1>HEEYAAAA!! AM JENN JENN!</h1>
                     <p>AM 16 YO AND I AM JS A NORMAL GIRL WHO THRIVES ON CUTE STUFFS, GYARUUUUUU YAAAY.
                         I LOVE SOFT COLOURS ESPECIALLY PINK AND I LOVE FOOD, SLEEP, SKETCH, DANCE, AND I ALSO WORK ON
                         PARANORMAL STUFFS:D
@@ -124,7 +126,6 @@
         <picture>
         </picture>
     </main>
-
 </body>
 
 </html>
